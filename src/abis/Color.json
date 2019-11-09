@@ -2585,12 +2585,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x3744f63Dc17D9D6278ebb7802d9C67bf72E46924",
-      "transactionHash": "0x1b169fa72c613396a15e8cab4c74d687d595e4da39b0bc07d619526bd8cfa12a"
+      "address": "0x831F4725f8970Db4222aB436e004fd100fa8C63F",
+      "transactionHash": "0x6231d292e53996b78086f6682f230ceff5fc70fe5656e1907060cfb59917dd38"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-11-09T19:12:17.676Z",
+  "updatedAt": "2019-11-09T20:01:18.409Z",
   "devdoc": {
     "methods": {
       "approve(address,uint256)": {

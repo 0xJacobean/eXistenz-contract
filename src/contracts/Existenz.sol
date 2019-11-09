@@ -5,37 +5,36 @@ pragma experimental ABIEncoderV2;
 import "@openzeppelin/contracts/token/ERC721/ERC721Metadata.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721Enumerable.sol";
 
-contract Color is ERC721Metadata, ERC721Enumerable {
+contract Existenz is ERC721Metadata, ERC721Enumerable {
 
   address[] public connections;
-  uint[] tokenUriArray;
   // mapping(string => bool) _colorExists;
+  string[] tokenUriArray;
 
   constructor() ERC721Metadata("eXistenz","EX") public {
   }
 
-  function mint(address _connectionAddress, uint _uri) public {
+  function mint(address _connectionAddress, string memory _addressAsString) public {
 
   	// return index of new push 
-    // uint _id = connections.push(_connectionAddress);
+    uint _id = connections.push(_connectionAddress);
     // mint token with connection address as owner
-    _mint(_connectionAddress, _uri);
+    _mint(_connectionAddress, _id);
     // uri is corresponding account address - for now!
-  	// _setTokenURI(_id, _addressAsString);
+  	_setTokenURI(_id, _addressAsString);
 
   }
 
-  function listAllUri(address _ownerAddress) public returns (uint[] memory) {
+  function listAllUri(address _ownerAddress) public returns (string[] memory) {
   	// get balance of for address 
     uint balanceOf = balanceOf(_ownerAddress);
-    uint[] memory tempTokenUriArray;
-    tokenUriArray = tempTokenUriArray;
 
+    string[] memory tempTokenUriArray;
+	tokenUriArray = tempTokenUriArray;
     for (uint i=0; i<balanceOf; i++) {
     	uint256 _tokenId = tokenOfOwnerByIndex(_ownerAddress, i);
-    	    	require(_tokenId, ‘Something bad happened’);
-    	// string memory uri = tokenURI(_tokenId);
-    	tokenUriArray.push(_tokenId);
+    	string memory uri = this.tokenURI(_tokenId);
+    	tokenUriArray.push(uri);
 	}
 	return tokenUriArray;
   }
