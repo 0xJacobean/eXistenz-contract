@@ -12,6 +12,13 @@ contract Existenz is ERC721Metadata, ERC721Enumerable {
   string[] tokenUriArray;
 
   constructor() ERC721Metadata("eXistenz","EX") public {
+    mint(0x8F5699ca05e24363b6183b2bF6D1Dc1ACC5026f7, "1");
+    mint(0x8F5699ca05e24363b6183b2bF6D1Dc1ACC5026f7, "2");
+    mint(0x8F5699ca05e24363b6183b2bF6D1Dc1ACC5026f7, "3");
+    mint(0x8F5699ca05e24363b6183b2bF6D1Dc1ACC5026f7, "4");
+    mint(0x8F5699ca05e24363b6183b2bF6D1Dc1ACC5026f7, "5");
+    mint(0x8F5699ca05e24363b6183b2bF6D1Dc1ACC5026f7, "6");
+    mint(0x8F5699ca05e24363b6183b2bF6D1Dc1ACC5026f7, "7");
   }
 
   function mint(address _connectionAddress, string memory _addressAsString) public {
